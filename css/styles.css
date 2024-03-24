@@ -30,6 +30,7 @@ body {
 .title-wrapper { grid-area: title-wrapper; }
 .steps-wrapper { grid-area: steps-wrapper; }
 .ingredient-wrapper { grid-area: ingredient-wrapper; }
+.ingredients { grid-area: ingredients; }
 .footer { grid-area: footer; }
 .grid-container {
     width: 95%;
@@ -39,6 +40,7 @@ body {
        "header header header header"
        "title-wrapper title-wrapper title-wrapper title-wrapper"
        "steps-wrapper steps-wrapper ingredient-wrapper ingredient-wrapper"
+       "ingredients ingredients ingredients ingredients"
        "footer footer footer footer";
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -173,42 +175,6 @@ header h1 {
 .ingredient-wrapper .imput {
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* --------
