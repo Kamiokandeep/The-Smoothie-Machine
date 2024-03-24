@@ -8,14 +8,20 @@ Version: 1.0
 */
 
 //
-const bananaBox = document.querySelector('#bananaBox');
+const imgSmoothie = document.querySelector('#img-smoothie');
+
 //
-const bananaCheckbox = document.querySelector('#bananaCheckbox');
-const mangoCheckbox = document.querySelector('#mangoCheckbox');
-const yogurtCheckbox = document.querySelector('#yogurtCheckbox');
+const bananaBox = document.querySelector('#bananaBox');
+
+//
+const cherryCheckbox = document.querySelector('#cherryCheckbox');
+const orangeCheckbox = document.querySelector('#orangeCheckbox');
+const blackberryCheckbox = document.querySelector('#blackberryCheckbox');
+const raspberryCheckbox = document.querySelector('#raspberryCheckbox');
+const blueberriesCheckbox = document.querySelector('#blueberriesCheckbox');
 const iceCreamCheckbox = document.querySelector('#iceCreamCheckbox');
 const chocolateCheckbox = document.querySelector('#chocolateCheckbox');
-const almondMilkCheckbox = document.querySelector('#almondMilkCheckbox');
+const mapleSyrupCheckbox = document.querySelector('#mapleSyrupCheckbox');
 const sizeSelect = document.querySelector('#sizeSelect');
 
 //
@@ -55,18 +61,21 @@ class Smoothie {
 }
 
 //
-bananaCheckbox.addEventListener('change', function() {
-    if (this.checked) {
-        console.log('Checkbox True');
-    } else {
-        console.log('Checkbox False');
-    }
-});
-
-//
 function handleButtonClick() {
     //
     const newSmoothie = new Smoothie(true, false, false, false, false, false, false);
     newSmoothie.order();
 }
 
+//
+cherryCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        imgSmoothie.src = "img/Cherry.png";
+    } 
+});
+//
+orangeCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        imgSmoothie.src = "img/Orange.png";
+    } 
+});
