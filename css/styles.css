@@ -7,6 +7,9 @@ Description: Simple form that allows the user to order a smoothie,
 Version: 1.0
 */
 
+/* --------------
+     Reset Frame 
+   --------------*/
 * {
     padding: 0;
     margin: 0;
@@ -17,31 +20,32 @@ body {
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
     font-style: normal;
-    background-color: rgb(237, 237, 237);
+    background-color: rgb(255, 255, 255);
 }
 
 /* --------
-     Frame 
+     Grid 
    --------*/
 .header { grid-area: header; }
+.title-wrapper { grid-area: title-wrapper; }
 .steps-wrapper { grid-area: steps-wrapper; }
 .ingredient-wrapper { grid-area: ingredient-wrapper; }
 .footer { grid-area: footer; }
-
 .grid-container {
     width: 95%;
     margin: 0px auto 0px auto;
     display: grid;
     grid-template-areas:
        "header header header header"
+       "title-wrapper title-wrapper title-wrapper title-wrapper"
        "steps-wrapper steps-wrapper ingredient-wrapper ingredient-wrapper"
        "footer footer footer footer";
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-/* --------
-    Header 
-   -------- */
+/* ----------------
+    CSS for Header 
+   ---------------- */
 header {
     background-color: #183867;
     color: #ffffff;
@@ -56,26 +60,29 @@ header h1 {
 }
 
 
-/* ---------------
-    steps-wrapper
-   --------------- */
-.steps-wrapper {
-    width: auto;
-    height: auto;
-    border: 1px solid #ccc;
-    padding: 20px;
-}
-
-.steps-wrapper h1 {
+/* --------------------
+    CSS for main title
+   -------------------- */
+.title-wrapper h1 {
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     color: #C35F29;
-    font-size: 50px;
-    margin-top: 0px;
-    margin-bottom: 15px;
+    font-size: 80px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     text-align: center;
+}
+
+
+/* ------------------------------
+    CSS for instructions section
+   ------------------------------ */
+.steps-wrapper {
+    width: auto;
+    height: auto;
+    padding: 20px;
 }
 
 .steps-wrapper p {
@@ -84,11 +91,13 @@ header h1 {
     font-style: normal;
     font-size: 35px;
     color: #183867;
-    margin-top: 0px;
+    margin-top: 26px;
+    margin-bottom: 26px;
+    text-align: center;
 }
   
 .step {
-    margin: 20px 20px;
+    margin: 20px 0px;
 }
   
 .step .number {
@@ -108,6 +117,98 @@ header h1 {
     overflow: hidden;
     font-size: 20px;
 }
+
+
+/* ------------------
+    CSS for the form 
+   ------------------ */
+.ingredient-wrapper {
+    width: auto;
+    padding: 20px;
+}
+
+.ingredient-wrapper p {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    color: #183867;
+    margin-top: 26px;
+    margin-bottom: 26px;
+    text-align: center;
+}
+
+.item {
+    margin: 20px 0;
+}
+  
+.item .checkbox {
+    float: left;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+}
+  
+.item .text {
+    overflow: hidden;
+    font-size: 20px;
+}
+
+
+/* -------------------------
+    CSS for the form button
+   ------------------------- */
+.ingredient-wrapper .button {
+    display: inline-block;
+    padding: 14px 24px;
+    background-color: #183867;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.ingredient-wrapper .imput {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* --------
