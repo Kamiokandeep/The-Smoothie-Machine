@@ -27,8 +27,8 @@ body {
      Grid 
    --------*/
 .header { grid-area: header; }
-.title-wrapper { grid-area: title-wrapper; }
-.steps-wrapper { grid-area: steps-wrapper; }
+.title { grid-area: title; }
+.steps { grid-area: steps; }
 .ingredient1 { grid-area: ingredient1; }
 .ingredient2 { grid-area: ingredient2; }
 .smoothie { grid-area: smoothie; }
@@ -39,10 +39,11 @@ body {
     display: grid;
     grid-template-areas:
        "header header header header"
-       "title-wrapper title-wrapper title-wrapper title-wrapper"
-       "steps-wrapper ingredient1 ingredient2 smoothie"
+       "title title title title"
+       "steps ingredient1 ingredient2 smoothie"
        "footer footer footer footer";
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 180px auto auto;
 }
 
 /* ----------------
@@ -65,7 +66,13 @@ header h1 {
 /* --------------------
     CSS for main title
    -------------------- */
-.title-wrapper h1 {
+.title {
+    display: flex; /* flexbox */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+}
+
+.title h1 {
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-weight: 700;
@@ -75,19 +82,20 @@ header h1 {
     margin-top: 25px;
     margin-bottom: 25px;
     text-align: center;
+    padding: 0px 90px 0px 90px;
 }
 
 
 /* ------------------------------
     CSS for instructions section
    ------------------------------ */
-.steps-wrapper {
+.steps {
     width: auto;
     height: auto;
-    padding: 20px;
+    padding: 10px;
 }
 
-.steps-wrapper p {
+.steps p {
     font-family: "Anton", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -127,13 +135,13 @@ header h1 {
 .ingredient1 {
     width: auto;
     height: auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .ingredient2 {
     width: auto;
     height: auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .ingredient1 p {
@@ -178,7 +186,14 @@ header h1 {
 /* -------------------------
     CSS for the form button
    ------------------------- */
-.ingredient2 .button {
+/* Estilos para botones deshabilitados */
+button:disabled {
+    opacity: 0.5; /* Reduce la opacidad del botón */
+    cursor: not-allowed; /* Cambia el cursor a 'no permitido' */
+    /* Otros estilos que desees aplicar */
+}
+
+.button {
     display: inline-block;
     padding: 14px 24px;
     background-color: #183867;
@@ -191,7 +206,7 @@ header h1 {
     margin-top: 25px;
 }
 
-.ingredient2 .imput {
+.ingredient2 .button-container {
     text-align: center;
 }
 
@@ -210,7 +225,7 @@ img {
     width: 270px;
     height: auto;
     max-width: 100%;
-    padding: 1vw;
+    padding: 10px;
 }
 
 

@@ -7,75 +7,184 @@ Description: Simple form that allows the user to order a smoothie,
 Version: 1.0
 */
 
-//
-const imgSmoothie = document.querySelector('#img-smoothie');
+/* ------------------------------
 
-//
-const bananaBox = document.querySelector('#bananaBox');
+    ------------------------------ */
+const cherryCheckbox = document.getElementById('cherryCheckbox');
+const orangeCheckbox = document.getElementById('orangeCheckbox');
+const blackberryCheckbox = document.getElementById('blackberryCheckbox');
+const raspberryCheckbox = document.getElementById('raspberryCheckbox');
+const blueberriesCheckbox = document.getElementById('blueberriesCheckbox');
+const iceCreamCheckbox = document.getElementById('iceCreamCheckbox');
+const chocolateCheckbox = document.getElementById('chocolateCheckbox');
+const mapleSyrupCheckbox = document.getElementById('mapleSyrupCheckbox');
+const imgSmoothie = document.getElementById('img-smoothie');
+const orderButton = document.getElementById('orderButton');
 
-//
-const cherryCheckbox = document.querySelector('#cherryCheckbox');
-const orangeCheckbox = document.querySelector('#orangeCheckbox');
-const blackberryCheckbox = document.querySelector('#blackberryCheckbox');
-const raspberryCheckbox = document.querySelector('#raspberryCheckbox');
-const blueberriesCheckbox = document.querySelector('#blueberriesCheckbox');
-const iceCreamCheckbox = document.querySelector('#iceCreamCheckbox');
-const chocolateCheckbox = document.querySelector('#chocolateCheckbox');
-const mapleSyrupCheckbox = document.querySelector('#mapleSyrupCheckbox');
-const sizeSelect = document.querySelector('#sizeSelect');
+/* ------------------------------
 
-//
+    ------------------------------ */
 class Smoothie {
-    banana;
-    mango;
-    yogurt;
+    cherry;
+    orange;
+    blackberry;
+    raspberry;
+    blueberries;
     iceCream;
     chocolate;
-    almondMilk;
-    size;
-    constructor(banana, mango, yogurt, iceCream, chocolate, almondMilk, size) {
-        this.banana = banana;
-        this.mango = mango;
-        this.yogurt = yogurt;
+    mapleSyrup;
+    constructor(cherry, orange, blackberry, raspberry, blueberries, iceCream, chocolate, mapleSyrup) {
+        this.cherry = cherry;
+        this.orange = orange;
+        this.blackberry = blackberry;
+        this.raspberry = raspberry;
+        this.blueberries = blueberries;
         this.iceCream = iceCream;
         this.chocolate = chocolate;
-        this.almondMilk = almondMilk;
-        this.size = size;
+        this.mapleSyrup = mapleSyrup;
     };
     order() {
-        // 
-        const bananaImg = document.createElement("img");
-        // 
-        let bananaSrc;
-        //
-        if (this.banana === true) {
-            bananaSrc = "img/glass-cup-fill.svg";
-        } else {
-            
+        /* ------------------------------
+
+           ------------------------------ */
+        let fruit = "Fruit Mix";
+        let iceCream = "";
+        let chocolate = "";
+        let mapleSyrup = "";
+        /* ------------------------------
+
+           ------------------------------ */
+        if (this.cherry === true) {
+            fruit = "Cherry";
+        } else if (this.orange === true) {
+            fruit = "Orange";
+        } else if (this.blackberry === true) {
+            fruit = "Blackberry";
+        } else if (this.raspberry === true) {
+            fruit = "Raspberry";
+        } else if (this.blueberries === true) {
+            fruit = "Blueberries";
         }
-        //
-        bananaImg.setAttribute("src", bananaSrc);
-        //
-        bananaBox.appendChild(bananaImg);
-    }
+        /* ------------------------------
+
+           ------------------------------ */
+        if (this.iceCream === true) {
+            iceCream = "Ice Cream + ";
+        } else {
+            iceCream = "";
+        }
+        if (this.chocolate === true) {
+            chocolate = "Chocolate + ";
+        } else {
+            chocolate = "";
+        }
+        if (this.mapleSyrup === true) {
+            mapleSyrup = "Maple Syrup + ";
+        } else {
+            mapleSyrup = "";
+        }
+        /* ------------------------------
+
+           ------------------------------ */
+        const title = document.getElementById("title");
+        const description = `Your smoothie with ${fruit} + ${iceCream} ${chocolate} ${mapleSyrup} Our secret touch is preparing and will be ready to pick up in 10 minutes.`;
+        title.innerText = description;
+        title.style.fontSize = "42px";
+        title.style.fontFamily = "Handlee", cursive;
+    }    
 }
 
-//
-function handleButtonClick() {
-    //
-    const newSmoothie = new Smoothie(true, false, false, false, false, false, false);
-    newSmoothie.order();
-}
+/* ------------------------------
 
-//
+   ------------------------------ */
+cherryActive = false;
+orangeActive = false;
+blackberryActive = false;
+raspberryActive = false;
+blueberriesActive = false;
+iceCreamActive = false;
+chocolateActive = false;
+mapleSyrupActive = false;
+
+/* ------------------------------
+
+   ------------------------------ */
 cherryCheckbox.addEventListener('change', function() {
     if (this.checked) {
         imgSmoothie.src = "img/Cherry.png";
-    } 
+        cherryActive = true;
+        orderButton.disabled = false;
+    } else {
+        cherryActive = false;
+    }
 });
-//
 orangeCheckbox.addEventListener('change', function() {
     if (this.checked) {
         imgSmoothie.src = "img/Orange.png";
-    } 
+        orangeActive = true;
+        orderButton.disabled = false;
+    } else {
+        orangeActive = false;
+    }
 });
+blackberryCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        imgSmoothie.src = "img/Blackberry.png";
+        blackberryActive = true;
+        orderButton.disabled = false;
+    } else {
+        blackberryActive = false;
+    }
+});
+raspberryCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        imgSmoothie.src = "img/Raspberry.png";
+        raspberryActive = true;
+        orderButton.disabled = false;
+    } else {
+        raspberryActive = false;
+    }
+});
+blueberriesCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        imgSmoothie.src = "img/Blueberries.png";
+        blueberriesActive = true;
+        orderButton.disabled = false;
+    } else {
+        blueberriesActive = false;
+    }
+});
+iceCreamCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        iceCreamActive = true;
+        orderButton.disabled = false;
+    } else {
+        iceCreamActive = false;
+    }
+});
+chocolateCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        chocolateActive = true;
+        orderButton.disabled = false;
+    } else {
+        chocolateActive = false;
+    }
+});
+mapleSyrupCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        mapleSyrupActive = true;
+        orderButton.disabled = false;
+    } else {
+        mapleSyrupActive = false;
+    }
+});
+
+
+/* ------------------------------
+
+   ------------------------------ */
+function buttonClick() {
+    //
+    const newSmoothie = new Smoothie(cherryActive, orangeActive, blackberryActive, raspberryActive, blueberriesActive, iceCreamActive, chocolateActive, mapleSyrupActive);
+    newSmoothie.order();
+}
