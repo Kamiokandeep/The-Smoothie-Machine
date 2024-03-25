@@ -67,7 +67,7 @@ header h1 {
     CSS for main title
    -------------------- */
 .title {
-    display: flex; /* flexbox */
+    display: flex;
     justify-content: center; /* Center text horizontally */
     align-items: center; /* Center text vertically */
 }
@@ -186,11 +186,9 @@ header h1 {
 /* -------------------------
     CSS for the form button
    ------------------------- */
-/* Estilos para botones deshabilitados */
-button:disabled {
-    opacity: 0.5; /* Reduce la opacidad del botón */
-    cursor: not-allowed; /* Cambia el cursor a 'no permitido' */
-    /* Otros estilos que desees aplicar */
+button:disabled { /* Styles for disabled buttons */
+    opacity: 0.5; /* Reduce button opacity */
+    cursor: not-allowed; /* Change the cursor to 'not allowed' */
 }
 
 .button {
